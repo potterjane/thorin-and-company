@@ -1,7 +1,9 @@
 #IMPORTANT: Make sure that 2 blank lines separate each function to keep it PEP8 compliant.
 
+
 import os #From the standard Python library
 from flask import Flask, render_template #Import Flask class after installing Flask in terminal, template renders HTML code from server
+
 
 app = Flask(__name__)
 """
@@ -10,6 +12,7 @@ The first argument of the Flask class is the name of the application's module - 
 Since we're just using a single module, we can use __name__ which is a built-in Python variable.
 Flask needs this so that it knows where to look for templates and static files. 
 """
+
 
 @app.route("/")
 def index():
@@ -23,9 +26,16 @@ def index():
     """
     return render_template("index.html")
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 
 if __name__ == "__main__":
     """

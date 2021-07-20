@@ -10,8 +10,10 @@
     
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li> <!--Use Jinja templating method of "url_for" to call appropriate functions-->
-            <li><a href="{{ url_for('about') }}">About</a></li> <!--Use Jinja templating method of "url_for" to call appropriate functions-->
+            <!--Use Jinja templating method of "url_for" to call appropriate functions-->
+            <li><a href="{{ url_for('index') }}">Home</a></li> 
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
     </nav>
 
