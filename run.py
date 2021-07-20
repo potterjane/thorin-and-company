@@ -1,5 +1,7 @@
+#IMPORTANT: Make sure that 2 blank lines separate each function to keep it PEP8 compliant.
+
 import os #From the standard Python library
-from flask import Flask #Import Flask class after installing Flask in terminal
+from flask import Flask, render_template #Import Flask class after installing Flask in terminal, template renders HTML code from server
 
 app = Flask(__name__)
 """
@@ -14,10 +16,16 @@ def index():
     """
     Use route decorator (also called pie-notation) to tell Flask what URL should trigger the index() 
     function. (Decorators wrap functions)
-    When browsing root directory (as indicated by "/"), Flask triggers the index function and returns 
-    the "Hello, World" text.
+    When we go to the "/" on the top-level of our domain, it returns the template from our index() 
+    function. 
+    The route decorator binds the index() function to itself, so that whenever that root is called, 
+    the function (or the view) is called.
     """
-    return "Hello, World"
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 if __name__ == "__main__":
     """
