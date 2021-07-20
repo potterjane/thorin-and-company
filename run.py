@@ -37,6 +37,11 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/careers")
+def careers():
+    return render_template("careers.html")
+
+
 if __name__ == "__main__":
     """
     "__main:__" is the name of the default mode in Python. This is the first one that we run, 
